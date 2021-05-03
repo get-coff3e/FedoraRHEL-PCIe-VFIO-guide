@@ -69,8 +69,8 @@ Regenerate your GRUB config and reboot.
 $ sudo grub2-mkconfig -o /etc/grub2-efi.cfg
 ```
 
-After the reboot, don't panic, your guest GPU should be disabled and your specified USB controller should too.
-Check if they are bound to the VFIO and PCI-STUB drivers before proceeding.
+After the reboot, don't panic if you see a black screen, your guest GPU should be disabled.
+Check if they are bound to the VFIO drivers before proceeding.
 ```sh
 lspci -nnv
 ```
