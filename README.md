@@ -29,7 +29,7 @@ IOMMU Group 18:
 ```
 
 You need to take note of their IDs. (Ex: The GPUs are **1002:67df** and **1002:aaf0**.)
-For now, I'll call them **GPU_ID1** **GPU_ID2** and **USB_ID**
+For now, I'll call them **GPU_ID1** **GPU_ID2**.
 
 # Setting up VFIO
 VFIO is the driver used for detaching devices from the host, and letting them be used by KVM to passthrough. This process will not be the same for other linux distributions, so its best to look it up for your specific distro!
