@@ -1,11 +1,11 @@
-# Fedora-34-VFIO-guide
+# Fedora-RHEL-VFIO-guide
 A helpful guide to guide through the process of enabling PCIe devices into vfio
 
 Most of the original content is from https://github.com/ekistece/Fedora-33-VFIO-guide and improved upon! Most of the instructions are not very different from there.
 
 # Getting the requirements
 You need:
- - Fedora 34 Workstation on your system
+ - Fedora 34 Workstation on your system or some other RHEL-based operating system
  - Two PCIe devices in different IOMMU groups
 
 # Enabling IOMMU
