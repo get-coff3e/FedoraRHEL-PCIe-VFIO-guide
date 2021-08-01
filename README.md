@@ -54,15 +54,16 @@ $ sudo nano /etc/default/grub
 
 Remember the GPU ID's from before? Now it's time to use them.
 
-Add this:
+Add these lines to your grub config
+
 For AMD CPUs:
 ```
-... quiet amd_iommu=on amd_iommu=pt rd.driver.pre=vfio-pci vfio-pci.ids=GPU_ID1,GPU_ID2
+GRUB_CMDLINE_LINUX_DEFAULT ... quiet amd_iommu =on amd_iommu=pt rd.driver.pre=vfio-pci vfio-pci.ids=GPU_ID1,GPU_ID2
 ```
 
 For Intel CPUs:
 ```
-... quiet intel_iommu=on intel_iommu=pt rd.driver.pre=vfio-pci vfio-pci.ids=GPU_ID1,GPU_ID2
+GRUB_CMDLINE_LINUX_DEFAULT ... quiet intel_iommu=on intel_iommu=pt rd.driver.pre=vfio-pci vfio-pci.ids=GPU_ID1,GPU_ID2
 ```
 
 Regenerate your GRUB config and reboot.
