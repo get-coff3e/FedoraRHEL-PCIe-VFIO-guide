@@ -9,7 +9,11 @@ You need:
  - Two PCIe devices in different IOMMU groups
 
 # Enabling IOMMU
-This is crucial, you need to enable the IOMMU option in your motherboard's BIOS.
+
+Its important to enable IOMMU, VT-d in your motherboard BIOS settings.
+
+Then create a file with this content:
+
 ```sh
 #!/bin/bash
 for d in /sys/kernel/iommu_groups/*/devices/*; do
@@ -18,10 +22,11 @@ for d in /sys/kernel/iommu_groups/*/devices/*; do
   lspci -nns "${d##*/}"
 done
 ```
-Then save this as **ls-iommu.sh** to helpfully list the IDs of all devices in a neater manner.
+Save this as **ls-iommu.sh**, and it will helpfully list the IDs of all devices in a neater manner than running lspci -vnnk
+
 Run it and check if your card is in their own groups. In my case:
 
-Guest GPU:
+Guest GPU (the gpu we want to passthrough):
 ```
 IOMMU Group 18:
 	26:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Ellesmere [Radeon RX 470/480/570/570X/580/580X/590] [1002:67df] (rev e7)
